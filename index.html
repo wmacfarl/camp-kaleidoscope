@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Camp Kaleidoscope</title>
     <link rel="stylesheet" href="styles.css" />
+
     <!-- MailerLite Universal -->
     <script>
       (function (w, d, e, u, f, l, n) {
-        (w[f] =
+        w[f] =
           w[f] ||
           function () {
             (w[f].q = w[f].q || []).push(arguments);
-          }),
-          (l = d.createElement(e)),
-          (l.async = 1),
-          (l.src = u),
-          (n = d.getElementsByTagName(e)[0]),
-          n.parentNode.insertBefore(l, n);
+          };
+        l = d.createElement(e);
+        l.async = 1;
+        l.src = u;
+        n = d.getElementsByTagName(e)[0];
+        n.parentNode.insertBefore(l, n);
       })(
         window,
         document,
@@ -27,74 +28,101 @@
       );
       ml("account", "1526125");
     </script>
-    <!-- End MailerLite Universal -->
+    <!-- End MailerLite -->
   </head>
   <body>
+    <!-- ────────── Header / Nav ────────── -->
     <header>
-      <nav>
-        <div class="logo"><a href="index.html">Camp Kaleidoscope</a></div>
-        <ul>
-          <li><a href="program.html">Our Program</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="staff.html">Staff</a></li>
-          <li><a href="space.html">Space</a></li>
-          <li><a href="sliding-scale.html">Sliding Scale</a></li>
-          <li><a href="upcoming-workshops.html">Upcoming Workshops</a></li>
-          <li><a href="inclusivity.html">Inclusivity</a></li>
-        </ul>
-      </nav>
+      <div class="container">
+        <a href="index.html" class="logo">Camp Kaleidoscope</a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="hamburger" aria-label="menu"
+          >&#9776;</label
+        >
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="camp.html">Camp</a></li>
+            <li><a href="philosophy.html">Philosophy</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
+
     <div class="banner"></div>
 
+    <!-- ────────── Main ────────── -->
     <main>
-      <h1>Registration is now open!</h1>
-      <p>
-        Join us for two weeks of arts, crafts, and creativity in Providence, RI.
-      </p>
+      <!-- Full-width tagline -->
+      <h1 class="page-tagline">
+        Community • Self-Directed Learning • Creative Play
+      </h1>
 
-      <ul>
-        <li>Week 1: July 7–11</li>
-        <li>Week 2: July 14–18</li>
-      </ul>
-      <p>
-        Camp Kaleidoscope is a
-        <a href="/inclusivity.html">radically-inclusive</a> two-week community
-        summer program for kids ages 6–12. We combine play, arts, making, and
-        self-directed learning to spark creativity and confidence.
-      </p>
-      <p>
-        Each week is offered separately, and you can register for one or both
-        weeks. Cost is $350 per week, with a sliding scale and free slots
-        available for families who need them. We are committed to making camp
-        accessible to all families, regardless of income.
-      </p>
-      <!-- button links to registration page-->
-      <a class="button" href="/register.html">Register Now</a>
-      <a class="button" href="program.html">Learn More</a>
-      <h1>Upcoming Workshops</h1>
-      <p>
-        Check out our <a href="upcoming-workshops.html">upcoming workshops</a>
-        to see what we have planned for the summer and beyond!
-      </p>
-      <h1>Our Space</h1>
-      <p>
-        We are proud to be partnering with
-        <a href="https://www.publicpvd.com/">Public Not Private</a> to offer our
-        program in at their amazing shop, studio, and gallery space at 50 Agnes
-        Street #101, Providence, RI 02909.
-      </p>
-      <h1>Contact Us</h1>
-      <p>
-        If you have any questions, please feel free to reach out to us at
-        <a href="mailto:contact@kaleidoscopepvd.com"
-          >contact@kaleidoscopepvd.com</a
-        >
-      </p>
-      <div class="ml-embedded" data-form="1RDbZk"></div>
+      <!-- Row 1: description + registration -->
+      <div class="two-col">
+        <section>
+          <p>
+            Camp Kaleidoscope is a <strong>pay-what-you-can</strong>,
+            child-centered summer program in Providence, RI. We blend art,
+            engineering, making, and free play for curious kids ages 6-12.
+          </p>
+        </section>
+
+        <section class="callout">
+          <h2>Registration is Open!</h2>
+          <p>
+            <strong>July 7-11</strong> &amp; <strong>July 14-18</strong><br />
+            9 am-3 pm (optional 8 am-5:30 pm care)<br />
+            Suggested sliding-scale fee: $350 / week
+          </p>
+          <a class="button" href="camp.html#register">Register Now</a>
+        </section>
+      </div>
+
+      <!-- Row 2 heading spans both columns -->
+      <h2 class="two-col-heading">Stay in touch</h2>
+
+      <!-- Row 2: workshops + mailing list -->
+      <div class="two-col">
+        <!-- prettier workshops section -->
+        <section>
+          <h3>Upcoming Workshops</h3>
+
+          <div class="workshops-grid">
+            <!-- Card 1 -->
+            <article class="workshop-card">
+              <h4>Open Shop @ Public Not Private</h4>
+              <p class="workshop-info"><strong>Sat May 24</strong> • 12–2 pm</p>
+              <a
+                class="button small"
+                href="https://calendar.boomte.ch/registration/xJ7fH9ciA8L3yJ7sA8M6tpx"
+              >
+                Sign Up
+              </a>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="workshop-card">
+              <h4>Open Shop @ Public Not Private</h4>
+              <p class="workshop-info"><strong>Sat Jun 28</strong> • 12–2 pm</p>
+              <a
+                class="button small"
+                href="https://calendar.boomte.ch/registration/cbiJ7H9rA8vyL3jJ7R5hL3h"
+              >
+                Sign Up
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h3>Mailing List</h3>
+          <div class="ml-embedded" data-form="1RDbZk"></div>
+        </section>
+      </div>
     </main>
 
-    <footer>
-      <p>© 2025 Kaleidscope Studios LLC</p>
-    </footer>
+    <footer>© 2025 Camp Kaleidoscope</footer>
   </body>
 </html>

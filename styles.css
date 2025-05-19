@@ -1,40 +1,52 @@
-/* styles.css for Camp Kaleidoscope */
-
-/* Import Google Font */
+/* Camp Kaleidoscope – v2 */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --primary: #56c6d9;
+  --primary-dark: #3bb0c5;
+  --primary-darker: #299bb0;
+  --accent: #2b6777;
+  --text: #333;
+  --bg: #fdfdfd;
+  --radius: 8px;
+  --max-width: 900px;
+}
 
 * {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
-  padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #fdfdfd;
-  color: #333;
+  color: var(--text);
+  background: var(--bg);
   line-height: 1.6;
 }
 
-/* Header and Navigation */
-header {
-  background: #56c6d9;
-  padding: 1rem 2rem;
+/* ────────── Layout helpers ────────── */
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+/* ────────── Header / Nav ────────── */
+header {
+  background: var(--primary);
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1000;
 }
-
-.logo a {
-  font-size: 1.5rem;
+.logo {
+  font-size: 1.4rem;
   font-weight: 600;
-  color: white;
+  color: #fff;
   text-decoration: none;
+  padding: 1rem 0;
 }
-
 nav ul {
   list-style: none;
   display: flex;
@@ -42,136 +54,239 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
 }
-
 nav a:hover,
 nav a:focus {
   text-decoration: underline;
 }
+nav a.active {
+  font-weight: 600;
+  text-decoration: underline;
+}
 
-/* Banner Image */
+/* Hamburger for ≤768 px */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem;
+}
+.nav-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  nav {
+    position: absolute;
+    inset: 60px 0 0 0;
+    background: var(--primary);
+    transform: translateY(-100%);
+    transition: 0.3s;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  .nav-toggle:checked + .hamburger + nav {
+    transform: translateY(0);
+  }
+}
+
+/* ────────── Banner ────────── */
 .banner {
-  background: url("/images/banner.png") no-repeat center center/cover;
-  width: 100%;
-  height: 200px;
-  position: relative;
+  height: 220px;
+  background: url("/images/banner.png") center/cover no-repeat;
 }
 
-/* Main Content */
+/* ────────── Main & Typography ────────── */
 main {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 2rem 1rem;
+  max-width: var(--max-width);
+  margin-inline: auto;
 }
-
 h1,
-h2 {
-  color: #2b6777;
+h2,
+h3 {
+  color: var(--accent);
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
-
-/* Lists */
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
 ul {
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
 }
 
-/* Buttons */
+/* ────────── Buttons ────────── */
 .button {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #56c6d9;
-  color: white;
+  padding: 0.7rem 1.4rem;
+  background: var(--primary);
+  color: #fff;
   font-weight: 600;
-  border-radius: 8px;
   text-decoration: none;
-  transition: background 0.3s;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
+  border-radius: var(--radius);
+  transition: 0.25s;
 }
-
 .button:hover {
-  background-color: #3bb0c5;
+  background: var(--primary-dark);
 }
-
 .button:active {
-  background-color: #299bb0;
+  background: var(--primary-darker);
 }
 
-/* Staff Page */
+/* ────────── Staff cards ────────── */
 .staff-member {
-  margin-bottom: 2rem;
   text-align: center;
+  margin-bottom: 2rem;
 }
-
 .staff-member img {
   width: 150px;
   height: 150px;
-  object-fit: cover;
   border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 1rem;
 }
 
-/* Footer */
+/* ────────── Footer ────────── */
 footer {
-  background: #2b6777;
-  color: white;
+  background: var(--accent);
+  color: #fff;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
   font-size: 0.9rem;
+  margin-top: 2rem;
 }
 
-/* Responsive Styles */
+/* ────────── Mobile tweaks ────────── */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  nav ul li {
-    width: 100%;
-  }
-
-  nav a {
-    display: block;
-    padding: 0.5rem 0;
-    width: 100%;
-  }
-
   .banner {
-    height: 150px;
-    background-position: center;
+    height: 160px;
   }
-
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
   .button {
     display: block;
     width: 100%;
     text-align: center;
+    margin-bottom: 1rem;
   }
+}
 
-  main {
-    padding: 1rem;
-  }
+/* ────────── About-page grids ────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
 
-  h1 {
-    font-size: 1.75rem;
-  }
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
 
-  h2 {
-    font-size: 1.5rem;
+@media (max-width: 768px) {
+  .two-col,
+  .staff-grid {
+    grid-template-columns: 1fr;
   }
+}
+
+/* ────────── Simple two-column helper ────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Optional light background for the registration call-out */
+.callout {
+  background: #eef7fa;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+/* Stack columns on small screens */
+@media (max-width: 768px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Full-width heading between two-col rows */
+.two-col-heading {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Ensure heading spans both columns when ≥768 px */
+@media (min-width: 769px) {
+  .two-col-heading {
+    grid-column: 1 / -1; /* if placed inside a grid in the future */
+  }
+}
+
+/* ────────── Workshops grid ────────── */
+.workshops-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0; /* reset list spacing */
+  padding: 0;
+}
+
+@media (min-width: 600px) {
+  /* auto-fit = as many cards as will fit, min 260 px each */
+  .workshops-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+.workshop-card {
+  background: #f9fdfe;
+  border: 1px solid #e0f3f6;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.workshop-card h4 {
+  margin: 0 0 0.25rem;
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.workshop-info {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.button.small {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
 }
