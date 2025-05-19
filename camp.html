@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Header / Nav (identical everywhere) -->
     <header>
       <div class="container">
         <a href="index.html" class="logo">Camp Kaleidoscope</a>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-        <label for="nav-toggle" class="hamburger">&#9776;</label>
+        <label for="nav-toggle" class="hamburger" aria-label="Toggle menu"
+          >&#9776;</label
+        >
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="camp.html">Camp</a></li>
+            <li><a href="camp.html" class="active">Camp</a></li>
             <li><a href="philosophy.html">Philosophy</a></li>
             <li><a href="about.html">About Us</a></li>
           </ul>
@@ -27,9 +28,7 @@
     <div class="banner"></div>
 
     <main>
-      <!-- ── Row 1: Register + Schedule ── -->
       <div class="two-col">
-        <!-- Register card -->
         <section id="register" class="callout">
           <h1>Register for Summer 2025</h1>
           <p>
@@ -46,7 +45,6 @@
           >
         </section>
 
-        <!-- Schedule card -->
         <section class="schedule-card">
           <h2>Typical Camp Day</h2>
           <ul class="schedule-list">
@@ -76,7 +74,6 @@
         </section>
       </div>
 
-      <!-- ── Row 2: centered blurb ── -->
       <p class="campers-note">
         Campers choose from staff-led activities—open shop, electronics,
         cardboard crafts, art-making, computer programming, science projects,
