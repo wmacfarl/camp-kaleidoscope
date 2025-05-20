@@ -80,25 +80,33 @@ nav a.active {
 }
 
 @media (max-width: 768px) {
+  /* show hamburger icon */
   .hamburger {
     display: block;
   }
+
+  /* hide the menu by default */
   nav {
     position: absolute;
-    top: 60px;
+    top: 100%; /* drop it just below the header */
     left: 0;
     right: 0;
     background: var(--primary);
-    transform: translateY(-100%);
+    display: none; /* ← easiest, bullet-proof way to hide */
     z-index: 999;
   }
+
+  /* reveal the menu when the checkbox is checked */
   .nav-toggle:checked + .hamburger + nav {
-    transform: translateY(0);
+    display: block;
   }
+
+  /* vertical stack for the links */
   nav ul {
     flex-direction: column;
     align-items: center;
     padding: 1rem 0;
+    gap: 1rem;
   }
 }
 
